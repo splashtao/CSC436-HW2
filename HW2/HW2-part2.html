@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Page Title</title>
+</head>
+
+<body>
+</body>
+
+</html>
+
+<style></style>
+
+<script>
+	class Set {
+  		constructor() {
+			this.set = {};
+  		}
+  		add(a){
+  			if (typeof a == 'string'){
+  				if (!this.set[a]){
+  					this.set[a] = true;
+  					console.log ("Add \"" + a + "\" into set!");
+  				} else {
+  					console.log ("Error!  \"" + a + "\" already exists in set!");
+  				}
+  			} else {
+  				console.log ("Error! Please input valid type");
+  			}
+  		}
+  		remove(a){
+  			if (typeof a == 'string') {
+        		if (this.set[a]) {
+          			delete this.set[a];
+          			console.log("Removed \"" + a + "\"from the set successfully.");
+        		} else {
+          			console.log("Error! The Item does not exist!");
+        		}
+      		} else {
+        		console.log("Error! Input is Invalid !");
+      		}
+  		}
+  		print() {
+      		console.log(Object.keys(this.set));
+    	}
+	}
+  var newSet = new Set();
+  newSet.add("Basketball");
+  newSet.add("Football");
+  newSet.add("Soccer");
+  newSet.add("Golf");
+  newSet.add(1);
+  newSet.remove("Basketball");
+  newSet.remove("Soccer");
+  newSet.print();
+</script>
